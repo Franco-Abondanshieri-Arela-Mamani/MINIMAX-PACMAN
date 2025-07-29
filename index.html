@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="game-header">
+            <h1 class="game-title">PAC-MAN</h1>
+            <div class="score-display">
+                <div class="score-item">
+                    <span class="score-label">PUNTOS</span>
+                    <span class="score-value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">VIDAS</span>
+                    <span class="score-value" id="lives">3</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-main">
+            <div class="game-area">
+                <canvas id="gameCanvas" width="600" height="600"></canvas>
+            </div>
+            
+            <aside class="game-controls">
+                <div class="control-section">
+                    <h3 class="control-title">Controles</h3>
+                    <div class="control-grid">
+                        <button class="control-btn" data-direction="up">↑</button>
+                        <div></div>
+                        <div></div>
+                        <button class="control-btn" data-direction="left">←</button>
+                        <button class="control-btn" data-direction="down">↓</button>
+                        <button class="control-btn" data-direction="right">→</button>
+                    </div>
+                    <p class="control-hint">O usa las flechas del teclado</p>
+                </div>
+
+                <div class="action-section">
+                    <button class="action-btn primary" id="pauseBtn">PAUSA</button>
+                    <button class="action-btn secondary" id="restartBtn">REINICIAR</button>
+                    <button class="action-btn ghost" id="muteBtn">SONIDO</button>
+                </div>
+
+                <div class="stats-section">
+                    <h3 class="stats-title">Estadísticas</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Tiempo</span>
+                        <span class="stat-value" id="gameTime">00:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Nivel</span>
+                        <span class="stat-value" id="level">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Mejor</span>
+                        <span class="stat-value" id="bestScore">0</span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="gameEngine.js"></script>
+    <script src="gameRenderer.js"></script>
+    <script src="gameController.js"></script>
+</body>
+</html>
